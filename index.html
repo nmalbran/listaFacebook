@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Limpiar lista de Facebook</title>
+    <script type="text/javascript" src="jquery-1.7.1.min.js" ></script>
+    <script type="text/javascript" src="lista.js" ></script>
+    <script type="text/javascript">
+
+    function a(){
+       var lines = $("#fbText").val();
+       console.log(lines);
+       var asdf = limpiarLista(lines);
+       $("#newText").val(asdf);
+    };
+
+    function selectAll(){
+        $("#newText").select();
+    };
+
+    $(document).ready(function(){
+        $("#fbText").click(function(){
+            $("#fbText").val("");
+        });
+    });
+
+    </script>
+</head>
+<body>
+
+<table>
+    <tr>
+        <td>
+            Lista Facebook:<br>
+            <textarea id="fbText" rows="35" cols="50">1) Ingresar al evento.
+2) Hacer click en Participantes (xx).
+3) Seleccionar toda la lista de invitados.
+4) Apretar en "Procesar Lista"</textarea>
+            <br>
+            <a href="#" id="boton" onclick="a();">Procesar lista</a>
+        </td>
+        <td>
+            Lista Ordenada:<br>
+            <textarea id="newText" rows="35" cols="50" readonly="readonly"></textarea>
+            <br>
+            <a href="#" id="boton" onclick="selectAll();">Seleccionar todo</a>
+        </td>
+    </tr>
+</table>
+
+
+</body>
+</html>
